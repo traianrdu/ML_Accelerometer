@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ML_Accelerometer</string>
+    <string name="export_data">Export Data</string>
 </resources>
