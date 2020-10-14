@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     TextView xValue, yValue, zValue;
 
     StringBuilder data= new StringBuilder();
+    int check=0;
     //int count=0;
 
     @Override
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         data.append("Time,Distance");
         for(int i=0; i<5; i++)
             data.append("\n").append(String.valueOf(i)).append(",").append(String.valueOf(i * i));*/
+        check = 0;
 
         try {
             //saving the file into service
@@ -80,10 +82,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent sensorEvent) {
         //show data on screen
 
-        data.append("\n").append(String.valueOf(sensorEvent.values[0])).append(",").append(String.valueOf(sensorEvent.values[1])).append(",").append(String.valueOf(sensorEvent.values[2]));
-        xValue.setText("xValue: "+sensorEvent.values[0]);
-        yValue.setText("yValue: "+sensorEvent.values[1]);
-        zValue.setText("zValue: "+sensorEvent.values[2]);
+        if(check == 1) {
+            data.append("\n").append(String.valueOf(sensorEvent.values[0])).append(",").append(String.valueOf(sensorEvent.values[1])).append(",").append(String.valueOf(sensorEvent.values[2]));
+            xValue.setText("xValue: " + sensorEvent.values[0]);
+            yValue.setText("yValue: " + sensorEvent.values[1]);
+            zValue.setText("zValue: " + sensorEvent.values[2]);
+        }
 
     }
 
@@ -91,4 +95,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onAccuracyChanged(Sensor sensor, int i) {
 
     }
+
+    public void proceed(View view){
+        check = 1;
+    }
+
 }
