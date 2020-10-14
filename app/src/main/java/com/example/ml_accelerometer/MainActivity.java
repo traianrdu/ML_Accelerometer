@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
         xValue = (TextView) findViewById(R.id.xValue);
+        yValue = (TextView) findViewById(R.id.yValue);
+        zValue = (TextView) findViewById(R.id.zValue);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -69,6 +71,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
+        //show data on screen
+        xValue.setText("xValue: "+sensorEvent.values[0]);
+        yValue.setText("yValue: "+sensorEvent.values[1]);
+        zValue.setText("zValue: "+sensorEvent.values[2]);
 
     }
 
