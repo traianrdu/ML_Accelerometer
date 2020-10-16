@@ -12,6 +12,7 @@ import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 import java.io.File;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private SensorManager sensorManager;
     Sensor accelerometer;
+    Chronometer chrono;
 
     TextView xValue, yValue, zValue;
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         sensorManager.registerListener(MainActivity.this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
 
         data.append("xValue,yValue,zValue");
+        chrono = (Chronometer) findViewById(R.id.chronometer1);
 
     }
 
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         for(int i=0; i<5; i++)
             data.append("\n").append(String.valueOf(i)).append(",").append(String.valueOf(i * i));*/
         check = 0;
+        chrono.stop();
 
         try {
             //saving the file into service
@@ -83,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         //show data on screen
 
         if(check == 1) {
+            chrono.start();
             data.append("\n").append(String.valueOf(sensorEvent.values[0])).append(",").append(String.valueOf(sensorEvent.values[1])).append(",").append(String.valueOf(sensorEvent.values[2]));
             xValue.setText("xValue: " + sensorEvent.values[0]);
             yValue.setText("yValue: " + sensorEvent.values[1]);
