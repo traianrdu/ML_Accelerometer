@@ -11,6 +11,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.TextView;
@@ -87,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         //show data on screen
 
         if(check == 1) {
-            chrono.start();
             data.append("\n").append(String.valueOf(sensorEvent.values[0])).append(",").append(String.valueOf(sensorEvent.values[1])).append(",").append(String.valueOf(sensorEvent.values[2]));
             xValue.setText("xValue: " + sensorEvent.values[0]);
             yValue.setText("yValue: " + sensorEvent.values[1]);
@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void proceed(View view){
         check = 1;
+        chrono.setBase(SystemClock.elapsedRealtime());
+        chrono.start();
     }
 
 }
