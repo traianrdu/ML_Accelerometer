@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "420564083212",
+    "firebase_url": "https://sdsi-e1caa.firebaseio.com",
+    "project_id": "sdsi-e1caa",
+    "storage_bucket": "sdsi-e1caa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420564083212:android:3002504d60acc651a04429",
+        "android_client_info": {
+          "package_name": "com.example.ml_accelerometer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420564083212-p2ki74q17mt7g971rr92988vcb57g3ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlNcC9JF04Gg5qSAkEKvl6yardqN_fLCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420564083212-p2ki74q17mt7g971rr92988vcb57g3ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         zValue = (TextView) findViewById(R.id.zValue);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        assert sensorManager != null;
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(MainActivity.this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
 
