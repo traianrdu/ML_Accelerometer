@@ -18,4 +18,9 @@ public class FirstPage extends AppCompatActivity {
         Intent intent = new Intent(FirstPage.this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void prediction_window(View view){
+        Intent intent = new Intent(FirstPage.this, PredictionPage.class);
+        startActivity(intent);
+    }
 }
